@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZTravel</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+
+                <div class="header__logo">
+                    <a href="#index.html">
+                        <i class="fa-solid fa-bus-side header__logo-icon"></i>
+                        <span class="header__logo-text">DZTravel</span>
+                    </a>
+                </div>
+
+                <div class="mobile-menu-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- Navigation Bar -->
+                <nav class="nav">
+
+                    <ul class="nav__links">
+                        <li>
+                            <a href="#index.html" class="nav__link active">Booking</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">My Account</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher">
+                        <i class="fa-solid fa-globe lang-switcher__icon"></i>
+                        <button class="lang-switcher__button">AR</button>
+                    </div>
+
+                    <!-- Auth Buttons -->
+                    <div class="buttons">
+                        <a href="#" class="button button--outline">Sign Up</a>
+                        <a href="#" class="button button--primary">Login</a>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Travel across Algeria with ease</h1>
+            <p class="hero-subtitle">
+                Book your bus tickets online quickly and easily
+            </p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search">
+        <div class="container">
+
+            <div class="search-card">
+                <div class="section-title ">
+                    <h2>Search for a route</h2>
+                </div>
+
+                <div class="search-form">
+
+                    <div class="form-col">
+                        <label for="dep" class="form-label">City of departure</label>
+                        <div class="select-wrapper">
+                            <i class="fa-solid fa-location-dot select-icon"></i>
+                            <select class="input-form" id="dep">
+                                <option value="">Select a city</option>
+                                <option value="alger">Alger</option>
+                                <option value="oran">Oran</option>
+                                <option value="constantine">Constantine</option>
+                                <option value="annaba">Annaba</option>
+                                <option value="setif">Sétif</option>
+                                <option value="tlemcen">Tlemcen</option>
+                                <option value="batna">Batna</option>
+                                <option value="bejaia">Béjaïa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-col">
+
+                        <label for="arr" class="form-label">Arrival city</label>
+                        <div class="select-wrapper">
+                            <i class="fa-solid fa-location-dot select-icon"></i>
+                            <select class="input-form" id="arr">
+                                <option value="">Select a city</option>
+                                <option value="alger">Alger</option>
+                                <option value="oran">Oran</option>
+                                <option value="constantine">Constantine</option>
+                                <option value="annaba">Annaba</option>
+                                <option value="setif">Sétif</option>
+                                <option value="tlemcen">Tlemcen</option>
+                                <option value="batna">Batna</option>
+                                <option value="bejaia">Béjaïa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-col">
+                        <label class="form-label">Departure date</label>
+                        <div class="select-wrapper">
+                            <i class="fa-solid fa-calendar  select-icon"></i>
+                            <input type="date" class="input-form">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="button--primary button">Search</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Popular -->
+    <div class="popular">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular routes</h2>
+            </div>
+
+            <div class="popular-content">
+
+                <div class="popular-card">
+                    <img src="imgs/bus.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">1500 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/man.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">500 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/old.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">950 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/man2.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">2800 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <!-- <div class="popular-card">
+                    <img src="imgs/people.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">6600 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/old2.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">1000 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/old.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">1900 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary   button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/trave.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">500 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="imgs/window.jpg" alt="">
+                    <div class="card-footer">
+
+                        <div class="info">
+                            <span>from</span>
+                            <span class="price">800 DZD</span>
+                        </div>
+
+                        <a href="#" class="button--primary button">book a ride</a>
+                    </div>
+                </div>
+ -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose DZTravel ?</h2>
+            </div>
+            <div class="features-content">
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Quick booking
+                    </h3>
+                    <p class="feature-description">Book your ticket in minutes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="feature-title">Secure payment</h3>
+                    <p class="feature-description">
+                        Multiple secure payment methods</p>
+
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">Competitive prices
+                    </h3>
+                    <p class="feature-description">The best prices for all destinations</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">24/7 Support
+                    </h3>
+                    <p class="feature-description">Our support team is ready to help you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Work (hiw)-->
+    <section class="hiw">
+        <div class="container">
+            <div class="hiw-content">
+                <div class="hiw-title">
+                    <h2>How It Works ?</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <span>1</span>
+                        <p>Choose your destination</p>
+                    </div>
+                    <div class="step">
+                        <span>2</span>
+                        <p>Select your seat</p>
+                    </div>
+                    <div class="step">
+                        <span>3</span>
+                        <p>Pay securely</p>
+                    </div>
+                    <div class="step">
+                        <span>4</span>
+                        <p>Receive your ticket</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- start route map -->
+    <section class="route-map">
+        <div class="container">
+            <div class="content">
+                <div class="section-title">
+                    <h2>Route map</h2>
+                </div>
+                <div class="location">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5036630.259449858!2d1.084315084804276!3d27.886167038398742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7e8a6a28037bd1%3A0x7140bee3abd7f8a2!2sAlgeria!5e0!3m2!1sen!2sus!4v1764972849970!5m2!1sen!2sus"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">DZTravel</h3>
+                    <p class="footer-text">Your trusted partner for your bus travels across Algeria.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-text">Email: contact@dztravel.dz</p>
+                    <p class="footer-text">Phone: +213 XXX XXX XXX</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 DZTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

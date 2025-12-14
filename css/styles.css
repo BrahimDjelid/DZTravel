@@ -392,6 +392,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 30px;
 }
 
+@media (max-width: 767px) {
+  .popular-content {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+}
+
 .popular-card {
   background-color: #fff;
   border-radius: 12px;
@@ -407,7 +413,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .popular-card img {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
   display: block;
 }
@@ -642,4 +648,314 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding-top: 2rem;
   border-top: 1px solid #334155;
   color: #cbd5e1;
+}
+
+/* Booking page */
+/* available-buses-header */
+.available-buses-header {
+  margin: 2rem 0 1.2rem;
+}
+
+.available-buses-header .header-card {
+  padding: 2.2rem 2rem;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.available-buses-header .header-card h2 {
+  color: var(--bg-dark);
+  font-size: 1.6rem;
+  margin: 0 0 0.8rem;
+}
+
+.available-buses-header .header-card .info {
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.available-buses-header .header-card .info i {
+  margin-right: 0.5rem;
+}
+
+.available-buses-header .header-card span {
+  display: flex;
+  align-items: center;
+}
+
+.available-buses-header .header-card .info span i {
+  margin: 0 0.4rem;
+}
+
+.available-buses-header .header-card .info span span {
+  margin: 0 1rem;
+}
+
+@media (max-width: 767px) {
+  .available-buses-header .header-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .available-buses-header .header-card .info {
+    font-size: 0.8rem;
+  }
+}
+
+.reservation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.filter-card {
+  background-color: #f8fafc;
+  padding: 1.4rem;
+  border-radius: 12px;
+  flex-basis: 27%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.filter-card h3 {
+  color: var(--bg-dark);
+  font-size: 1.4rem;
+  margin: 1rem 0;
+}
+
+.filter-card .sort-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.filter-card .sort-buttons .sort-btn {
+  border: none;
+  padding: 0.9rem;
+  margin: 0.4rem 0;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.filter-card .sort-buttons .sort-btn:hover {
+  background-color: #e7e9eb;
+}
+
+.sort-btn.active {
+  background-color: #dfeffe !important;
+  color: var(--primary-blue);
+}
+
+.price-filter input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) - Track */
+.price-filter input[type="range"]::-webkit-slider-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 5px;
+}
+
+/* Webkit browsers - Thumb (the draggable circle) */
+.price-filter input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #1d4ed8;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.price-filter input[type="range"]::-webkit-slider-thumb:hover {
+  background: #1e40af;
+  transform: scale(1.1);
+}
+
+/* Firefox - Track */
+.price-filter input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 5px;
+}
+
+/* Firefox - Thumb */
+.price-filter input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #1d4ed8;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.price-filter input[type="range"]::-moz-range-thumb:hover {
+  background: #1e40af;
+  transform: scale(1.1);
+}
+
+/* Progress fill effect (optional but recommended) */
+.price-filter input[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #1d4ed8 0%,
+    #1d4ed8 var(--range-progress, 100%),
+    #e5e7eb var(--range-progress, 100%),
+    #e5e7eb 100%
+  );
+  border-radius: 8px;
+}
+
+.price-filter input[type="range"]::-moz-range-progress {
+  background: #1d4ed8;
+  height: 6px;
+  border-radius: 5px;
+}
+
+#priceValue {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.buses {
+  flex-basis: 73%;
+}
+
+.bus-info {
+  background-color: #f8fafc;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  transition: 0.2s;
+  margin-bottom: 1.1rem;
+}
+
+.bus-info:hover {
+  box-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
+}
+
+.bus-info .left h4 {
+  font-size: 1.3rem;
+  color: #1e293b;
+  margin: 0 0 0.5rem;
+}
+
+.bus-info .left .time {
+  color: #51565d;
+  font-size: 1rem;
+}
+
+.bus-info .left .time i:nth-of-type(1) {
+  margin-right: 0.3rem;
+}
+
+.bus-info .left .time i:nth-of-type(2) {
+  margin: 0 0.5rem;
+}
+
+.bus-info .left .time i:nth-of-type(3) {
+  margin-right: 0.3rem;
+}
+
+.bus-info .left p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.bus-info .right p {
+  font-size: 1.25rem;
+  color: #51565d;
+  margin: 1rem 0;
+  text-align: right;
+}
+
+.bus-info .right p span {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+.bus-info .right button {
+  outline: none;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  width: 100%;
+  font-size: 1.07rem;
+}
+
+@media (max-width: 991px) {
+  .reservation {
+    flex-direction: column;
+  }
+
+  .filter-card,
+  .buses {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .bus-info {
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  .filter-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .filter-card .sort-buttons .sort-btn {
+    padding: 0.9rem;
+  }
+
+  #priceValue {
+    font-size: 0.9rem;
+  }
+
+  .bus-info .left h4 {
+    font-size: 1rem;
+  }
+
+  .bus-info .left .time {
+    font-size: 0.8rem;
+  }
+
+  .bus-info .left p {
+    font-size: 0.8rem;
+  }
+
+  .bus-info .right p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .bus-info .right p span {
+    color: var(--primary-blue);
+    font-weight: 600;
+  }
+
+  .bus-info .right button {
+    outline: none;
+    border: none;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0;
+  }
 }

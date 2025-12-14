@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZTravel</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+
+                <div class="header__logo">
+                    <a href="index.html">
+                        <i class="fa-solid fa-bus-side header__logo-icon"></i>
+                        <span class="header__logo-text">DZTravel</span>
+                    </a>
+                </div>
+
+                <div class="mobile-menu-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- Navigation Bar -->
+                <nav class="nav">
+
+                    <ul class="nav__links">
+                        <li>
+                            <a href="index.html" class="nav__link active">Booking</a>
+                        </li>
+                        <li>
+                            <a href="account.html" class="nav__link">My Account</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher">
+                        <i class="fa-solid fa-globe lang-switcher__icon"></i>
+                        <button class="lang-switcher__button">AR</button>
+                    </div>
+
+                    <!-- Auth Buttons -->
+                    <div class="buttons">
+                        <a href="#" class="button button--outline">Sign Up</a>
+                        <a href="#" class="button button--primary">Login</a>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- available buses header -->
+    <section class="available-buses-header">
+        <div class="container">
+            <div class="header-card">
+                <h2>Available routes</h2>
+                <div class="info">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>Alger <i class="fa-solid fa-arrow-right-long"></i> Bouira <span>&bull;</span>
+                        2025-12-13</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- available-buses -->
+    <section class="available-buses">
+        <div class="container">
+            <div class="reservation">
+
+                <div class="filter-card">
+
+                    <h3>Sort by</h3>
+                    <div class="sort-buttons">
+                        <button class="button sort-btn active">Departure time</button>
+                        <button class="button sort-btn">Price</button>
+                    </div>
+
+                    <h3>Sort by price</h3>
+                    <div class="price-filter">
+                        <input type="range" id="priceRange" min="0" max="5000" value="5000">
+                        <p id="priceValue">0 DZD - 5000 DZD</p>
+                    </div>
+
+                </div>
+
+                <div class="buses">
+
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>SETRAM</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 06:00 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 08:30
+                            </span>
+                            <p>Durée: 2h30min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">4500 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>Numidia Bus</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 07:00 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 09:45
+                            </span>
+                            <p>Durée: 2h45min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">5000 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>Numidia Bus</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 07:30 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 10:15
+                            </span>
+                            <p>Durée: 2h45min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">4800 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>Atlas Transport</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 08:00 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 10:30
+                            </span>
+                            <p>Durée: 2h30min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">2200 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>Atlas Transport</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 09:00 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 11:30
+                            </span>
+                            <p>Durée: 2h30min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">3000 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>Atlas Transport</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 10:00 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 12:45
+                            </span>
+                            <p>Durée: 2h45min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">5500 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                    <div class="bus-info">
+
+                        <div class="left">
+                            <h4>SOGRAL</h4>
+                            <span class="time">
+                                <i class="fa-regular fa-clock"></i> 11:00 <i class="fa-solid fa-arrow-right"></i>
+                                <i class="fa-regular fa-clock"></i> 13:30
+                            </span>
+                            <p>Durée: 2h30min</p>
+                        </div>
+
+                        <div class="right">
+                            <p>prix : <span class="price">4700 DZD</span></p>
+                            <button class="button button--primary" id="selectBus">Select Bus</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">DZTravel</h3>
+                    <p class="footer-text">Your trusted partner for your bus travels across Algeria.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-text">Email: contact@dztravel.dz</p>
+                    <p class="footer-text">Phone: +213 XXX XXX XXX</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 DZTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

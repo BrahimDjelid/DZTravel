@@ -959,3 +959,247 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 0;
   }
 }
+
+/* Seats */
+.seats-header {
+  margin: 2rem 0 1.2rem;
+}
+
+.seats-head {
+  padding: 2.2rem 2rem;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.seats-head h2 {
+  color: var(--bg-dark);
+  font-size: 1.6rem;
+  margin: 0 0 0.8rem;
+}
+
+.seats-head .info .road-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #51565d;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.seats-head .info .time {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+@media (max-width: 767px) {
+  .seats-head h2 {
+    color: var(--bg-dark);
+    font-size: 1.3rem;
+    margin: 0 0 0.8rem;
+  }
+
+  .seats-head .info .road-info {
+    font-size: 0.9rem;
+  }
+
+  .seats-head .info .time {
+    font-size: 0.8rem;
+  }
+}
+
+.seats-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+}
+
+.seat-map-container,
+.summary-card-sticky {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .seats-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .seat-map-container,
+  .booking-summary-container {
+    flex-basis: 100%;
+  }
+}
+
+.seat-legend {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.legend-item {
+  font-size: 15px;
+}
+
+.seat-demo {
+  position: relative;
+  left: 30px;
+}
+
+.seat-demo::before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  left: -25px;
+  border-radius: 6px;
+  transform: translate(0, -50%);
+  top: 50%;
+}
+
+.seat-demo.available::before {
+  background-color: #9cd5fe6e;
+}
+
+.seat-demo.selected::before {
+  background-color: #1d4ed8;
+}
+.seat-demo.occupied::before {
+  background-color: #e2e8f0;
+}
+
+.bus-layout {
+  background: #f8fafc;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+}
+
+.driver-seat {
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  background-color: #1e293b;
+  color: #fff;
+  width: fit-content;
+}
+
+.seat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.aisle {
+  background: transparent;
+}
+
+.seat {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.seat.available {
+  background: #9cd5fe6e;
+  color: #0369a1;
+  border: 2px solid #bae6fd;
+}
+
+.seat.available:hover {
+  background: #7dd3fc;
+  border-color: #0ea5e9;
+}
+
+.seat.selected {
+  background: #2563eb;
+  color: white;
+  border: 2px solid #1d4ed8;
+}
+
+.seat.occupied {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  border: 2px solid #cbd5e1;
+}
+
+.summary-card-sticky {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.summary-label {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.summary-value {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 1.5rem 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.total-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.total-amount {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+@media (max-width: 767px) {
+  .total-label {
+    font-size: 1rem;
+  }
+
+  .total-amount {
+    font-size: 1.2rem;
+  }
+}
+
+.goToPayement {
+  width: 100%;
+  padding: 1rem;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZTravel</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+
+                <div class="header__logo">
+                    <a href="index.html">
+                        <i class="fa-solid fa-bus-side header__logo-icon"></i>
+                        <span class="header__logo-text">DZTravel</span>
+                    </a>
+                </div>
+
+                <div class="mobile-menu-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- Navigation Bar -->
+                <nav class="nav">
+
+                    <ul class="nav__links">
+                        <li>
+                            <a href="index.html" class="nav__link active">Booking</a>
+                        </li>
+                        <li>
+                            <a href="account.html" class="nav__link">My Account</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher">
+                        <i class="fa-solid fa-globe lang-switcher__icon"></i>
+                        <button class="lang-switcher__button">AR</button>
+                    </div>
+
+                    <!-- Auth Buttons -->
+                    <div class="buttons">
+                        <a href="#" class="button button--outline">Sign Up</a>
+                        <a href="#" class="button button--primary">Login</a>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- seats header -->
+    <section class="seats-header">
+        <div class="container">
+            <div class="seats-head">
+                <h2>Select your seats</h2>
+                <div class="info">
+                    <span class="road-info"> <span class="companyName">SOGRAL</span> &bull; <span
+                            class="dest">Alger</span> <i class="fa-solid fa-arrow-right-long"></i>
+                        <span class="arrival">Bouira</span></span>
+                    <span class="time">2025-11-16 &bull; 07:22</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seats-section">
+        <div class="container">
+            <div class="seats-container">
+                <!-- let side - seat map -->
+                <div class="seat-map-container">
+                    <h3 class="card-title">
+                        Select your seats (max 5)
+                    </h3>
+
+                    <div class="seat-legend">
+                        <div class="legend-item">
+                            <div class="seat-demo available">
+                                <span>Available</span>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat-demo selected">
+                                <span>Selected</span>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="seat-demo occupied">
+                                <span>Occupied</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bus-layout">
+                        <div class="driver-seat">
+                            Driver
+                        </div>
+
+                        <div class="seat-row">
+                            <div class="seat available">1</div>
+                            <div class="seat available">2</div>
+                            <div class="aisle"></div>
+                            <div class="seat occupied">3</div>
+                            <div class="seat available">4</div>
+                        </div>
+
+                        <div class="seat-row">
+                            <div class="seat available">5</div>
+                            <div class="seat available">6</div>
+                            <div class="aisle"></div>
+                            <div class="seat occupied">7</div>
+                            <div class="seat available">8</div>
+                        </div>
+                        <div class="seat-row">
+                            <div class="seat available">9</div>
+                            <div class="seat available">10</div>
+                            <div class="aisle"></div>
+                            <div class="seat available">11</div>
+                            <div class="seat available">12</div>
+                        </div>
+                        <div class="seat-row">
+                            <div class="seat available">13</div>
+                            <div class="seat occupied">14</div>
+                            <div class="aisle"></div>
+                            <div class="seat occupied">15</div>
+                            <div class="seat available">16</div>
+                        </div>
+
+                        <div class="seat-row">
+                            <div class="seat occupied">17</div>
+                            <div class="seat available">18</div>
+                            <div class="aisle"></div>
+                            <div class="seat available">19</div>
+                            <div class="seat available">20</div>
+                        </div>
+
+                        <div class="seat-row">
+                            <div class="seat available">21</div>
+                            <div class="seat available">22</div>
+                            <div class="aisle"></div>
+                            <div class="seat available">23</div>
+                            <div class="seat available">24</div>
+                        </div>
+
+                        <div class="seat-row">
+                            <div class="seat available">25</div>
+                            <div class="seat occupied">26</div>
+                            <div class="aisle"></div>
+                            <div class="seat available">27</div>
+                            <div class="seat available">28</div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Right Side - Summary -->
+                <div class="booking-summary-container">
+                    <div class="summary-card-sticky">
+                        <h3 class="card-title">Summary</h3>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Route</div>
+                            <div class="summary-value">Algiers <i class="fa-solid fa-arrow-right-long"></i> Bouira</div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Date</div>
+                            <div class="summary-value">Sat. Dec 11, 2025</div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Departure Time</div>
+                            <div class="summary-value">07:22</div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Company</div>
+                            <div class="summary-value">SOGRAL</div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Selected Seats</div>
+                            <div class="summary-value seat-num">No seat selected</div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Unit Price</div>
+                            <div class="summary-value">1,500 DA</div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-total">
+                            <div class="total-label">Total</div>
+                            <div class="total-amount">0 DA</div>
+                        </div>
+
+                        <a href="#" class="button button--primary goToPayement">Proceed to Payment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">DZTravel</h3>
+                    <p class="footer-text">Your trusted partner for your bus travels across Algeria.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-text">Email: contact@dztravel.dz</p>
+                    <p class="footer-text">Phone: +213 XXX XXX XXX</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 DZTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -20,12 +20,12 @@ if (search_button) {
   });
 }
 
-const selectBus = document.getElementById("selectBus");
-if (selectBus) {
-  selectBus.addEventListener("click", () => {
+const selectBus = document.querySelectorAll("#selectBus");
+selectBus.forEach((selected) => {
+  selected.addEventListener("click", () => {
     window.open("seats.html", "_self");
   });
-}
+});
 
 // Color only the active link
 navLinks.forEach((link) => {
@@ -52,31 +52,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Check if we're on the booking page
   if (!priceRange || !busesContainer || sortButtons.length === 0) {
-    return; // Exit if booking elements don't exist
+    return;
   }
 
   let currentSort = "time";
   let maxPrice = 5000;
 
-  // Store original bus data
-  const busElements = Array.from(document.querySelectorAll(".bus-info")); // busElements is an Array of buses (contains all bus-info elements)
+  const busElements = Array.from(document.querySelectorAll(".bus-info"));
 
-  // Extract buses information (price and time) and store them in an array
   const busData = busElements.map((bus) => {
     const priceText = bus.querySelector(".right .price").textContent;
     const price = parseInt(priceText.replace(/\D/g, ""));
-    const timeText = bus.querySelector(".time").textContent.trim(); // Result e.g: "06:00 -> 08:00"
-    const departureTime = timeText.split("→")[0].trim().split(" ")[1]; // Result "06:00"
+    const timeText = bus.querySelector(".time").textContent.trim();
+    const departureTime = timeText.split("→")[0].trim().split(" ")[1];
 
     return {
       element: bus,
-      price: price, // For comparing prices
-      departureTime: departureTime, // For sorting with time
+      price: price,
+      departureTime: departureTime,
       company: bus.querySelector(".left h4").textContent,
     };
   });
 
-  // Update price range display
   priceRange.addEventListener("input", function () {
     maxPrice = parseInt(this.value);
     priceValue.textContent = `0 DZD - ${maxPrice} DZD`;
@@ -87,15 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
     filterAndSortBuses();
   });
 
-  // Handle sort button clicks
   sortButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      // Remove active class from all buttons
       sortButtons.forEach((btn) => btn.classList.remove("active"));
-      // Add active class to clicked button
       this.classList.add("active");
 
-      // Set current sort type
       if (
         this.textContent.includes("Departure") ||
         this.textContent.includes("time")
@@ -112,12 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Main filter and sort function
   function filterAndSortBuses() {
-    // Filter by price
     let filteredBuses = busData.filter((bus) => bus.price <= maxPrice);
 
-    // Sort based on current sort type
     if (currentSort === "time") {
       filteredBuses.sort((a, b) => {
         return timeToMinutes(a.departureTime) - timeToMinutes(b.departureTime);
@@ -126,10 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
       filteredBuses.sort((a, b) => a.price - b.price);
     }
 
-    // Clear container
     busesContainer.innerHTML = "";
 
-    // Add filtered and sorted buses back
     if (filteredBuses.length === 0) {
       busesContainer.innerHTML =
         '<p style="text-align: center; padding: 2rem; color: #64748b;">No buses available for the selected price range.</p>';
@@ -140,12 +128,153 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Helper function to convert time to minutes for sorting
   function timeToMinutes(time) {
     const [hours, minutes] = time.split(":").map((num) => parseInt(num));
     return hours * 60 + minutes;
   }
 
-  // Initial render with default sorting
   filterAndSortBuses();
+});
+
+// Seat Selection Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const seats = document.querySelectorAll(".seat-row .seat");
+  const summarySeats = document.querySelector(".seat-num");
+  const totalAmount = document.querySelector(".total-amount");
+  const proceedButton = document.querySelector(".goToPayement");
+
+  if (!seats.length || !summarySeats || !totalAmount) {
+    return;
+  }
+
+  const UNIT_PRICE = 1500;
+  const MAX_SEATS = 5;
+
+  let selectedSeatsArray = [];
+
+  seats.forEach((seat) => {
+    if (seat.classList.contains("available")) {
+      seat.addEventListener("click", () => {
+        handleSeatClick(seat);
+      });
+    }
+  });
+
+  function handleSeatClick(seat) {
+    const seatNumber = seat.textContent.trim();
+
+    if (seat.classList.contains("selected")) {
+      deselectSeat(seat, seatNumber);
+    } else if (selectedSeatsArray.length < MAX_SEATS) {
+      selectSeat(seat, seatNumber);
+    } else {
+      showMaxSeatsWarning();
+    }
+
+    updateSummary();
+  }
+
+  function selectSeat(seat, seatNumber) {
+    seat.classList.remove("available");
+    seat.classList.add("selected");
+    selectedSeatsArray.push(seatNumber);
+  }
+
+  function deselectSeat(seat, seatNumber) {
+    seat.classList.remove("selected");
+    seat.classList.add("available");
+    selectedSeatsArray = selectedSeatsArray.filter((num) => num !== seatNumber);
+  }
+
+  function updateSummary() {
+    if (selectedSeatsArray.length === 0) {
+      summarySeats.textContent = "No seat selected";
+      summarySeats.style.color = "#64748b";
+    } else {
+      const sortedSeats = selectedSeatsArray.sort(
+        (a, b) => parseInt(a) - parseInt(b)
+      );
+      summarySeats.textContent = sortedSeats.join(", ");
+      summarySeats.style.color = "#1e293b";
+    }
+
+    const totalPrice = selectedSeatsArray.length * UNIT_PRICE;
+    totalAmount.textContent = formatPrice(totalPrice);
+
+    if (selectedSeatsArray.length === 0) {
+      proceedButton.style.opacity = "0.5";
+      proceedButton.style.cursor = "not-allowed";
+      proceedButton.style.pointerEvents = "none";
+    } else {
+      proceedButton.style.opacity = "1";
+      proceedButton.style.cursor = "pointer";
+      proceedButton.style.pointerEvents = "auto";
+    }
+  }
+
+  function formatPrice(price) {
+    return price.toLocaleString("fr-DZ") + " DA";
+  }
+
+  function showMaxSeatsWarning() {
+    let warning = document.querySelector(".max-seats-warning");
+
+    if (!warning) {
+      warning = document.createElement("div");
+      warning.className = "max-seats-warning";
+      warning.style.cssText = `
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ef4444;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        font-weight: 500;
+        animation: slideDown 0.3s ease;
+      `;
+      warning.textContent = `Maximum ${MAX_SEATS} seats allowed`;
+      document.body.appendChild(warning);
+
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    warning.style.display = "block";
+
+    setTimeout(() => {
+      warning.style.display = "none";
+    }, 2000);
+  }
+
+  updateSummary();
+
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = `
+    .seat.selected {
+      animation: seatPulse 0.3s ease;
+    }
+    
+    @keyframes seatPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  `;
+  document.head.appendChild(styleSheet);
 });
